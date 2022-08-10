@@ -17,8 +17,6 @@ spec:
     dockerStrategy:
       dockerfilePath: docker/Dockerfile
   triggers:
-    - type: ImageChange
-      imageChange: {}
     - type: ConfigChange
   output:
     to:
