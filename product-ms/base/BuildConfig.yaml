@@ -1,0 +1,18 @@
+apiVersion: build.openshift.io/v1
+kind: BuildConfig
+metadata:
+  name: product-ms-build
+spec:
+  source:
+    git:
+      ref: main
+      uri: 'git@github.com:Client-Engineering-Industry-Squad-1-CD/products-ms.git'
+    type: Git
+  strategy:
+    type: Docker
+    dockerStrategy:
+      dockerfilePath: docker/Dockerfile
+  triggers:
+    - type: ImageChange
+      imageChange: {}
+    - type: ConfigChange
