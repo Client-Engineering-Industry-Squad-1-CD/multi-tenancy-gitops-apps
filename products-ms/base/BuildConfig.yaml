@@ -3,6 +3,8 @@ kind: BuildConfig
 metadata:
   name: product-ms-build
 spec:
+  successfulBuildsHistoryLimit: 5
+  failedBuildsHistoryLimit: 5
   source:
     git:
       ref: main
@@ -18,3 +20,7 @@ spec:
     - type: ImageChange
       imageChange: {}
     - type: ConfigChange
+  output:
+    to:
+      kind: ImageStreamTag
+      name: 'product-ms:latest'
