@@ -7,6 +7,8 @@ spec:
     git:
       ref: main
       uri: 'git@github.com:Client-Engineering-Industry-Squad-1-CD/products-ms.git'
+    sourceSecret:
+      name: gitsecret
     type: Git
   strategy:
     type: Docker
