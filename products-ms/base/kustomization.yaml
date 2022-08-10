@@ -2,3 +2,4 @@ commonLabels:
   app: products-ms
 resources:
   - BuildConfig.yaml
+  - ImageStream.yaml
