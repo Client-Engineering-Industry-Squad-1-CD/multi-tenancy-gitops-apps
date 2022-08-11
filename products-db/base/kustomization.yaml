@@ -1,6 +1,6 @@
 commonLabels:
   app: products-db
 resources:
-  - deployment.yaml
+  - deploymentconfig.yaml
   - pvc.yaml
   - service.yaml
