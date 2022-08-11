@@ -1,0 +1,47 @@
+kind: DeploymentConfig
+apiVersion: apps.openshift.io/v1
+metadata:
+  name: products-ms
+spec:
+  strategy:
+    type: Recreate
+    recreateParams:
+      timeoutSeconds: 600
+    activeDeadlineSeconds: 21600
+  triggers:
+    - type: ImageChange
+      imageChangeParams:
+        automatic: true
+        containerNames:
+          - products-ms
+        from:
+          kind: ImageStreamTag
+          namespace: dev
+          name: 'product-ms:latest'
+    - type: ConfigChange
+  replicas: 1
+  revisionHistoryLimit: 10
+  test: false
+  selector:
+    name: products-ms
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        name: products-ms
+    spec:
+      containers:
+        - resources:
+            limits:
+              memory: 512Mi
+          securityContext:
+            privileged: false
+          ports:
+            - containerPort: 8080
+              protocol: TCP
+              name: http
+          imagePullPolicy: IfNotPresent
+          name: products-ms
+      restartPolicy: Always
+      terminationGracePeriodSeconds: 30
+      dnsPolicy: ClusterFirst

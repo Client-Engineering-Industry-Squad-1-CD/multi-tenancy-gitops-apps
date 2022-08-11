@@ -2,4 +2,6 @@ commonLabels:
   app: products-ms
 resources:
   - buildconfig.yaml
+  - deploymentconfig.yaml
   - imagestream.yaml
+  - service.yaml
