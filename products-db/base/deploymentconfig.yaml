@@ -29,6 +29,7 @@ spec:
       creationTimestamp: null
       labels:
         app: products-db
+        app.openshift.io/runtime: postgresql
     spec:
       volumes:
         - name: products-data
