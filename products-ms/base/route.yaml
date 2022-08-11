@@ -9,3 +9,6 @@ spec:
     name: products-ms
   port:
     targetPort: http
+  tls:
+    termination: edge
+    insecureEdgeTerminationPolicy: Redirect
