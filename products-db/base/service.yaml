@@ -4,7 +4,7 @@ metadata:
   name: products-db
 spec:
   selector:
-    app.kubernetes.io/name: products-db
+    name: products-db
   ports:
   - name: postgres
     protocol: TCP
