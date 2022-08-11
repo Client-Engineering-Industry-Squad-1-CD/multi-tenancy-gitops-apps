@@ -29,6 +29,7 @@ spec:
       creationTimestamp: null
       labels:
         app: products-ms
+      annotations:
         app.openshift.io/runtime: nodejs
     spec:
       containers:
