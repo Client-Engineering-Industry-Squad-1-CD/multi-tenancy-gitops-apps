@@ -58,6 +58,13 @@ spec:
                   key: DB_NAME
           imagePullPolicy: IfNotPresent
           name: products-ms
+          volumeMounts:
+            - name: products-ms-config
+              mountPath: /config
+      volumes:
+        - name: products-ms-config
+          configMap:
+            name: products-ms-config
       restartPolicy: Always
       terminationGracePeriodSeconds: 30
       dnsPolicy: ClusterFirst
