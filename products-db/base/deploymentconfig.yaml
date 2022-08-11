@@ -33,7 +33,7 @@ spec:
       volumes:
         - name: products-data
           persistentVolumeClaim:
-            claimName: products-db-pvc
+            claimName: products-db
       containers:
         - resources:
             limits:
