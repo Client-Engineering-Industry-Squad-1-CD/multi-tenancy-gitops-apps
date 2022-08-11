@@ -3,7 +3,7 @@ kind: PersistentVolumeClaim
 metadata:
   name: products-db-pvc
 spec:
-  storageClassName: default
+  storageClassName: ibmc-file-gold-gid
   accessModes:
     - ReadWriteOnce
   resources:
