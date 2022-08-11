@@ -63,18 +63,18 @@ spec:
             - name: POSTGRESQL_USER
               valueFrom:
                 secretKeyRef:
-                  name: postgresql
-                  key: database-user
+                  name: products-db-secret
+                  key: DB_USER
             - name: POSTGRESQL_PASSWORD
               valueFrom:
                 secretKeyRef:
-                  name: postgresql
-                  key: database-password
+                  name: products-db-secret
+                  key: DB_PASSWORD
             - name: POSTGRESQL_DATABASE
               valueFrom:
                 secretKeyRef:
-                  name: postgresql
-                  key: database-name
+                  name: products-db-secret
+                  key: DB_NAME
           securityContext:
             privileged: false
           ports:
@@ -85,7 +85,6 @@ spec:
             - name: products-data
               mountPath: /var/lib/pgsql/data
           terminationMessagePolicy: File
-          image: ' '
       restartPolicy: Always
       terminationGracePeriodSeconds: 30
       dnsPolicy: ClusterFirst
