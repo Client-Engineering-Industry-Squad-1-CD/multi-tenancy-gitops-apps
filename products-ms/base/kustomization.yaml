@@ -1,9 +1,11 @@
 commonLabels:
   app: products-ms
 configMapGenerator:
-- name: products-ms-config
-  files:
-  - application.properties
+  - name: products-ms-config
+    files:
+    - application.properties
+configurations:
+  - configurations/nameReference.yaml
 resources:
   - buildconfig.yaml
   - deploymentconfig.yaml
