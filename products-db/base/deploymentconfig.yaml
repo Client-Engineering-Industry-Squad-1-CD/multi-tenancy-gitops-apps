@@ -23,7 +23,7 @@ spec:
   revisionHistoryLimit: 10
   test: false
   selector:
-    name: products-db
+    app: products-db
   template:
     metadata:
       creationTimestamp: null
