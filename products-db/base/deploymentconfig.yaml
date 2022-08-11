@@ -28,7 +28,7 @@ spec:
     metadata:
       creationTimestamp: null
       labels:
-        name: products-db
+        app: products-db
     spec:
       volumes:
         - name: products-data
