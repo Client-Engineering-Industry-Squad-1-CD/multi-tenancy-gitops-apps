@@ -10,4 +10,5 @@ resources:
   - buildconfig.yaml
   - deploymentconfig.yaml
   - imagestream.yaml
+  - route.yaml
   - service.yaml

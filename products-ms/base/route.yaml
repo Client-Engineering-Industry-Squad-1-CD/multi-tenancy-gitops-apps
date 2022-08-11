@@ -1,0 +1,11 @@
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  name: products-ms
+spec:
+  path: /
+  to:
+    kind: Service
+    name: products-ms
+  port:
+    targetPort: http
