@@ -2,6 +2,8 @@ kind: DeploymentConfig
 apiVersion: apps.openshift.io/v1
 metadata:
   name: products-ms
+  labels:
+    app.openshift.io/runtime: nodejs
 spec:
   strategy:
     type: Recreate
@@ -29,8 +31,6 @@ spec:
       creationTimestamp: null
       labels:
         app: products-ms
-      annotations:
-        app.openshift.io/runtime: nodejs
     spec:
       containers:
         - resources:

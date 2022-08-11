@@ -2,6 +2,8 @@ kind: DeploymentConfig
 apiVersion: apps.openshift.io/v1
 metadata:
   name: products-db
+  labels:
+    app.openshift.io/runtime: postgresql
 spec:
   strategy:
     type: Recreate
@@ -29,8 +31,6 @@ spec:
       creationTimestamp: null
       labels:
         app: products-db
-      annotations:
-        app.openshift.io/runtime: postgresql
     spec:
       volumes:
         - name: products-data
