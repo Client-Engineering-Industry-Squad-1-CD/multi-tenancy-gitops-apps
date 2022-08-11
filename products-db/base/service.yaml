@@ -3,8 +3,7 @@ kind: Service
 metadata:
   name: products-db
 spec:
-  selector:
-    name: products-db
+  selector: {}
   ports:
   - name: postgres
     protocol: TCP
