@@ -1,2 +1,4 @@
 bases:
 - ../../base
+resources:
+  - products-ms-sealed-secret.yaml
