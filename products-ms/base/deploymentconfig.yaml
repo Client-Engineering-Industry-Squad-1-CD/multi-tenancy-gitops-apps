@@ -23,12 +23,12 @@ spec:
   revisionHistoryLimit: 10
   test: false
   selector:
-    name: products-ms
+    app: products-ms
   template:
     metadata:
       creationTimestamp: null
       labels:
-        name: products-ms
+        app: products-ms
     spec:
       containers:
         - resources:
