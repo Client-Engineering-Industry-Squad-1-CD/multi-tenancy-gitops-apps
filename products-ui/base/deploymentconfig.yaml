@@ -1,0 +1,49 @@
+kind: DeploymentConfig
+apiVersion: apps.openshift.io/v1
+metadata:
+  name: products-ui
+  labels:
+    app.openshift.io/runtime: nginx
+spec:
+  strategy:
+    type: Recreate
+    recreateParams:
+      timeoutSeconds: 600
+    activeDeadlineSeconds: 21600
+  triggers:
+    - type: ImageChange
+      imageChangeParams:
+        automatic: true
+        containerNames:
+          - products-ui
+        from:
+          kind: ImageStreamTag
+          namespace: dev
+          name: 'product-ui:latest'
+    - type: ConfigChange
+  replicas: 1
+  revisionHistoryLimit: 10
+  test: false
+  selector:
+    app: products-ui
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: products-ui
+    spec:
+      containers:
+        - resources:
+            limits:
+              memory: 512Mi
+          securityContext:
+            privileged: false
+          ports:
+            - containerPort: 80
+              protocol: TCP
+              name: http
+          imagePullPolicy: IfNotPresent
+          name: products-ui
+      restartPolicy: Always
+      terminationGracePeriodSeconds: 30
+      dnsPolicy: ClusterFirst

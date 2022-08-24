@@ -1,0 +1,10 @@
+commonLabels:
+  app: products-ui
+configurations:
+  - configurations/nameReference.yaml
+resources:
+  - buildconfig.yaml
+  - deploymentconfig.yaml
+  - imagestream.yaml
+  - route.yaml
+  - service.yaml
