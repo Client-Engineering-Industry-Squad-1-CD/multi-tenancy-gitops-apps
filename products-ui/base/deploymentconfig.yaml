@@ -39,7 +39,7 @@ spec:
           securityContext:
             privileged: false
           ports:
-            - containerPort: 80
+            - containerPort: 8080
               protocol: TCP
               name: http
           imagePullPolicy: IfNotPresent
