@@ -10,7 +10,7 @@ spec:
       ref: main
       uri: 'git@github.com:Client-Engineering-Industry-Squad-1-CD/products-ui.git'
     sourceSecret:
-      name: gitsecret
+      name: gitsecret-2
     type: Git
   strategy:
     type: Docker
