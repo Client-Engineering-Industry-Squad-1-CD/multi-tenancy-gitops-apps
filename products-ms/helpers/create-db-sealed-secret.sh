@@ -13,7 +13,7 @@ if [[ -z ${SECRET_NAMESPACE} ]]; then
   echo "Please provide environment variable SECRET_NAMESPACE"
   exit 1
 fi
-DB_NAME=${DB_NAME:-PRODUCTS}
+DB_NAME=${DB_NAME:-postgres}
 SEALED_SECRET_NAMESPACE=${SEALED_SECRET_NAMESPACE:-sealed-secrets}
 SEALED_SECRET_CONTOLLER_NAME=${SEALED_SECRET_CONTOLLER_NAME:-sealed-secrets}
 
