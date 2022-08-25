@@ -1,0 +1,5 @@
+commonLabels:
+  app: products-ms
+resources:
+  - buildconfig.yaml
+  - imagestream.yaml
