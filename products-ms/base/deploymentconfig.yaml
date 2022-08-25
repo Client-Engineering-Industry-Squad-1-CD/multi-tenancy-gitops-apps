@@ -18,7 +18,7 @@ spec:
           - products-ms
         from:
           kind: ImageStreamTag
-          namespace: dev
+          namespace: ci
           name: 'product-ms:latest'
     - type: ConfigChange
   replicas: 1
